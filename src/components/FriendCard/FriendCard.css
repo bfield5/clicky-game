@@ -1,0 +1,33 @@
+
+.friendCard {
+    
+    border-radius: 2px;
+    margin: 1rem;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    box-shadow: 6px 5px 5px grey;
+    text-align: left;
+    border: none !important;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .friendCard > .img-container {
+    text-align: center;
+    background:#6CADDC;
+    
+  }
+  .friendCard > .img-container > img {
+    width: 150px;
+    height: 150px;
+    
+  } 
+  
+  
+ 
+  
+  
+  
+ 
