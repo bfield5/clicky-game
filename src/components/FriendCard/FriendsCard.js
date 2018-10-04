@@ -23,8 +23,8 @@ import "./FriendCard.css";
 const FriendCard = props => (
     <div
         role="img"
-        aria-label="click item"
-        className={`friendCard ${props.animate? "animated wobble": ""}`} 
+        aria-label="click item" 
+        className="friendCard"
         style={{ backgroundImage: `url("${props.image}")` }}
         onClick={() => props.handleClick(props.id)}
     /> 

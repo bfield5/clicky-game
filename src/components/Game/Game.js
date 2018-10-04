@@ -41,7 +41,7 @@ correctGuess = newFriends => {
       friends: this.shuffleDeck(newFriends),
       score: newScore,
       topScore: newTopScore,
-      animation: "animated swing"
+      
   })
 }
 
