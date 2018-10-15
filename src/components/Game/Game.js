@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import FriendCard from "../FriendCard";
 import Wrapper from "../Wrapper";
+import Header from "../Header";
+import Footer from "../Footer";
 import friends from "../../data";
 
 
-class Game extends React.Component {
+class Game extends Component {
   state = {
     friends: friends,
     score: 0,
@@ -25,7 +27,7 @@ componentDidMount() {
 
 // resets all the clicked properties to false
 resetDeck = friends => {
-  const resetFriends = friends.map(item => ({ ...item, clicked: false }));
+  const resetFriends = friends.map(friend => ({ ...friend, clicked: false }));
   // console.log(friends);
   // console.log(resetFriends);
   return this.shuffleDeck(resetFriends);
@@ -35,6 +37,7 @@ resetDeck = friends => {
 correctGuess = newFriends => {
   let newScore = this.state.score;
   newScore++
+  // fix would be this.state.score
   let newTopScore = Math.max(newScore, this.state.topScore);
 
   this.setState({
@@ -58,14 +61,14 @@ wrongGuess = newFriends => {
 gameCardClick = id => {
   let guessedCorrectly = false;
   // newFriends will be the friends array with updated clicked properties
-  const newFriends= this.state.friends.map(item => {
-    if (item.id === id) {
-      if (!item.clicked) {
-        item.clicked = true;
+  const newFriends= this.state.friends.map(friend => {
+    if (friend.id === id) {
+      if (!friend.clicked) {
+        friend.clicked = true;
         guessedCorrectly = true;
       }
     }
-    return item;     
+    return friend;     
   });
   // if guessedCorrectly = true, run the correctGuess function,
   // else run the wrongGuess function
@@ -77,20 +80,21 @@ gameCardClick = id => {
   render() {
     return (
       <div>
+        <Header score={this.state.score} topScore = {this.state.topScore} />
           <Wrapper>
             <h1></h1>
-            {this.state.friends.map(item => 
+            {this.state.friends.map(friend => 
               <FriendCard
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              image={item.image}
-              clicked={item.clicked}
+              key={friend.id}
+              id={friend.id}
+              image={friend.image}
+              clicked={friend.clicked}
               handleClick={this.gameCardClick}
             />
               )}
             
           </Wrapper>
+          <Footer />
         </div>
       );
     }

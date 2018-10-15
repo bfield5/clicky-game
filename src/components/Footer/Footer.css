@@ -1,0 +1,46 @@
+.footer {
+    min-height: 80px;
+    width: 100%;
+    background: #FFDAB9;
+    box-shadow: 0 0 5px 1px darkslategrey;
+    position: relative;
+    margin-top: 50px;
+    margin: 0 auto;
+   
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 50px;
+    border-top: 5px solid #FFDAB9;
+    background: #FFDAB9;
+    text-align: center;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+
+    .bottom {
+        bottom: -30px;
+    }
+
+    #footer-list li {
+        width: 100%;
+        display: block;
+        padding-bottom: 5px;
+    }
+}
+
+@media (min-height: 860px) and (min-width: 1000px) {
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+    }   
+}

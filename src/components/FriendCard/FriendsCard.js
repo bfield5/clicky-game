@@ -26,6 +26,7 @@ const FriendCard = props => (
         aria-label="click item" 
         className="friendCard"
         style={{ backgroundImage: `url("${props.image}")` }}
+        value={props.id}
         onClick={() => props.handleClick(props.id)}
     /> 
 );
